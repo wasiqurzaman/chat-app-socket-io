@@ -70,6 +70,7 @@ h1 {
   margin-bottom: 2rem;
   max-width: 75%;
   border-radius: 20px 20px 20px 0;
+  word-break: break-all;
 }
 
 .msg-own {

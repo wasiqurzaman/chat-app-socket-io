@@ -17,7 +17,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="stylesheet" href="style.css" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/4.1.0/cdn.min.js"
+      integrity="sha512-bz58Sg3BAWMEMPTH0B8+pK/+5Qfqq6b2Ho2G4ld12x4fiUVqpY8jSbN/73qpBQYFLU4QnKVL5knUm4uqcJGLVw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
     <title>Chat App</title>
   </head>
 
@@ -37,56 +48,11 @@
           />
         </div>
         <div class="message-container">
-          <div class="msg-box msg-other">
-            <p class="msg-text">
-              Hello there. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Quaerat iure id obcaecati, illo atque non labore temporibus
-              ex totam laudantium qui architecto molestias ut.
-            </p>
-            <span class="msg-info">
-              <span class="msg-author">user1</span>
-              <i class="fa-solid fa-circle"></i>
-              <span class="msg-time">19 Oct 9:45</span>
-            </span>
-          </div>
-          <div class="msg-box msg-own">
-            <p class="msg-text">Hello there</p>
-            <span class="msg-info">
-              <span class="msg-author">user1</span>
-              <i class="fa-solid fa-circle"></i>
-              <span class="msg-time">19 Oct 9:45</span>
-            </span>
-          </div>
-          <div class="msg-box msg-other">
-            <p class="msg-text">
-              Hello there. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Repellat dolorum consequuntur saepe veniam voluptas nobis
-              eos quas quia quidem laborum illo velit vel tenetur eum fugit,
-              harum architecto aliquid qui.
-            </p>
-            <span class="msg-info">
-              <span class="msg-author">user1</span>
-              <i class="fa-solid fa-circle"></i>
-              <span class="msg-time">19 Oct 9:45</span>
-            </span>
-          </div>
-          <div class="msg-box msg-own">
-            <p class="msg-text">Hey</p>
-            <span class="msg-info">
-              <span class="msg-author">user1</span>
-              <i class="fa-solid fa-circle"></i>
-              <span class="msg-time">19 Oct 9:45</span>
-            </span>
-          </div>
-          <div class="msg-feedback">
-            <p class="feedback">user2 is typing a message</p>
-          </div>
+          <p class="msg-feedback"></p>
         </div>
         <form class="msg-form">
           <input
             type="text"
-            name="message"
-            id="msg-input"
             class="msg-input-text"
             placeholder="Type a message"
           />
@@ -95,7 +61,7 @@
           </button>
         </form>
       </div>
-      <h2 class="user-num">Total users online: 3</h2>
+      <h2 class="user-num">Total users online: 0</h2>
     </div>
   </body>
 </html>
