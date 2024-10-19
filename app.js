@@ -33,4 +33,8 @@ function onConnected(socket) {
   socket.on("clientMessage", (data) => {
     socket.broadcast.emit("serverMessage", data);
   });
+
+  socket.on("feedback", (data) => {
+    socket.broadcast.emit("serverFeedback", data);
+  })
 }

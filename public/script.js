@@ -11,7 +11,10 @@ const msgContainer = document.querySelector(".message-container");
 const msgForm = document.querySelector(".msg-form");
 const msgInput = document.querySelector(".msg-input-text");
 const usersNum = document.querySelector("h2.user-num");
-const msgFeedback = document.querySelector(".msg-feedback")
+const msgFeedback = document.querySelector(".msg-feedback");
+
+const incomingMsgTone = new Audio("/message-pop-alert.mp3");
+
 
 msgForm.addEventListener("submit", function (e) {
   e.preventDefault()
@@ -54,5 +57,22 @@ function scrollToBottom() {
 socket.on("serverMessage", (data) => {
   console.log(data);
   updateUI(data, "msg-other");
+  incomingMsgTone.play();
   scrollToBottom();
-})
+});
+
+msgInput.addEventListener("focus", function () {
+  socket.emit("feedback", { feedback: `${inputName.value} is typing` })
+});
+
+msgInput.addEventListener("keypress", function () {
+  socket.emit("feedback", { feedback: `${inputName.value} is typing` })
+});
+
+msgInput.addEventListener("blur", function () {
+  socket.emit("feedback", { feedback: `` })
+});
+
+socket.on("serverFeedback", (data) => {
+  msgFeedback.textContent = data.feedback;
+});
