@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  height: 100vh;
+}
+
+.container {
+  margin: 50px auto;
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+.chat-container {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #000000;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.user-info {
+  padding: 1rem;
+}
+
+.user-info i {
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+.input-name {
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.message-container {
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex: 1;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  /* scrollbar-width: none; */
+}
+
+.msg-box {
+  padding: 1rem 2rem;
+  background-color: #fff;
+  margin-bottom: 2rem;
+  max-width: 75%;
+  border-radius: 20px 20px 20px 0;
+}
+
+.msg-own {
+  align-self: flex-end;
+  border-radius: 20px 20px 0 20px;
+  background-color: #9775fa;
+  color: #fff;
+}
+
+.msg-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  width: fit-content;
+  margin-bottom: 1.2rem;
+  width: fit-content;
+}
+
+.msg-info {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  gap: 0.5rem;
+}
+
+.msg-author {
+  font-weight: 600;
+}
+
+.msg-info i {
+  font-size: 0.6rem;
+}
+
+.msg-feedback {
+  align-self: center;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.msg-form {
+  display: flex;
+}
+
+.msg-input-text {
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  flex: 1;
+  border: none;
+}
+
+.msg-input-text:focus {
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  flex: 1;
+  outline: none;
+}
+
+.btn-send {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1.2rem 2rem;
+  border: none;
+  background-color: #fff;
+  border: 1px solid #22b8cf;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-send:hover {
+  background-color: #22b8cf;
+  color: #fff;
+}
+
+h2.user-num {
+  text-align: center;
+}
