@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Chat App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>Chat App <i class="fa-regular fa-message"></i></h1>
+      </div>
+      <div class="chat-container">
+        <div class="user-info">
+          <i class="fa-regular fa-user" class="user-avatar"></i>
+          <input
+            type="text"
+            value="anonymous"
+            maxlength="20"
+            class="input-name"
+          />
+        </div>
+        <div class="message-container">
+          <div class="msg-box msg-other">
+            <p class="msg-text">Hello there</p>
+            <span class="msg-info">
+              <span class="msg-author">user1</span>
+              <i class="fa-solid fa-circle"></i>
+              <span class="msg-time">19 Oct 9:45</span>
+            </span>
+            <div class="msg-box msg-other">
+              <p class="msg-text">Hello there</p>
+              <span class="msg-info">
+                <span class="msg-author">user1</span>
+                <i class="fa-solid fa-circle"></i>
+                <span class="msg-time">19 Oct 9:45</span>
+              </span>
+            </div>
+            <div class="msg-box msg-other">
+              <p class="msg-text">Hello there</p>
+              <span class="msg-info">
+                <span class="msg-author">user1</span>
+                <i class="fa-solid fa-circle"></i>
+                <span class="msg-time">19 Oct 9:45</span>
+              </span>
+            </div>
+          </div>
+          <div class="msg-feedback">
+            <p class="feedback">user2 is typing a message</p>
+          </div>
+        </div>
+        <form class="msg-form">
+          <input
+            type="text"
+            name="message"
+            id="msg-input"
+            class="msg-input-text"
+            placeholder="Type a message"
+          />
+          <button type="submit" class="btn btn-send">
+            send <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+      <h2 class="user-num">Total users online: 3</h2>
+    </div>
+  </body>
+</html>
