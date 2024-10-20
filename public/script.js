@@ -1,11 +1,6 @@
 
 const socket = io("http://localhost:3300");
 
-socket.on("client-nums", (data) => {
-  console.log(data);
-  usersNum.textContent = `Total users online: ${data}`;
-});
-
 const inputName = document.querySelector(".input-name")
 const msgContainer = document.querySelector(".message-container");
 const msgForm = document.querySelector(".msg-form");
@@ -15,9 +10,13 @@ const msgFeedback = document.querySelector(".msg-feedback");
 
 const incomingMsgTone = new Audio("/message-pop-alert.mp3");
 
+socket.on("client-nums", (data) => {
+  console.log(data);
+  usersNum.textContent = `Total users online: ${data}`;
+});
 
 msgForm.addEventListener("submit", function (e) {
-  e.preventDefault()
+  e.preventDefault();
   const data = {
     message: msgInput.value,
     username: inputName.value,
@@ -30,10 +29,9 @@ msgForm.addEventListener("submit", function (e) {
   scrollToBottom();
 });
 
-
 function sendMessage(data) {
   socket.emit("clientMessage", data);
-  msgInput.value = ""
+  msgInput.value = "";
 }
 
 function updateUI(data, type) {
